@@ -117,7 +117,6 @@ post('/login', 'LoginForm', async (form, ctx) => {
 // À partir d'ici, les accès nécessitent d'être protégés
 adminapi.use((ctx, next) => {
     let auth = ctx.get('Authorization') as string | undefined;
-    console.log(auth)
     let payload = auth ? checkAuth(auth) : null;
     if (!auth || !payload) {
         ctx.throw(403, 'Not authorized');

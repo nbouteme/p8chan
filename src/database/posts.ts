@@ -237,7 +237,6 @@ export let getThread = async (board: string, id: number) => {
     ]).toArray();
     if (data.length == 0)
         throw "No such thread";
-    console.log(data);
     let res = data[0];
     return filterpost(res.replies);
 };

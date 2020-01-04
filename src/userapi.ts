@@ -156,7 +156,6 @@ get('/challenge', (c) => {
 post('/challenge', 'ChallengeAnswer', (ch, c) => {
     let now = +new Date();
     let pl = getJWTPayload(ch.token);
-    console.log(pl);
     if (now > pl.exp)
         throw "Token expired";
     if (pl.for != c.request.ip)

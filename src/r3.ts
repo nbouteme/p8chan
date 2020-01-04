@@ -61,7 +61,6 @@ let signalModification = () => {
         .getCompilerOptionsDiagnostics()
         .concat(services.getSyntacticDiagnostics(inf))
         .concat(services.getSemanticDiagnostics(inf));
-    console.log(diags.map(d => d.messageText))
     return diags.length == 0;
 }
 

@@ -65,15 +65,13 @@ let fsp = fs.promises;
                 index: 'index.html',
                 root: settings.frontend
             })).use((c) => {
-                console.log('not found???');
                 return send(c, 'index.html', { root: settings.frontend })
             }
             );
         //    root.use(boardapi);
         root.listen({ port: settings.port, host: '127.0.0.1' }, () => {
-            console.log('Listening...');
         })
     } catch (e) {
-        console.log(e);
+        console.error(e);
     }
 })();

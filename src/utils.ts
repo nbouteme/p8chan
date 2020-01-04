@@ -40,7 +40,6 @@ export let getJWTPayload = <T>(token: JWT<T>): T => {
 export let encrypt = (clear: Buffer, key: string) => {
     // osef de ne pas utiliser l'auth car ca fini dans un hmac au final
     let kb = Buffer.from(key, 'hex');
-    console.log(kb);
     let cipher = crypto.createCipheriv('aes-128-cbc', kb, kb);
     cipher.update(clear);
     return cipher.final();
