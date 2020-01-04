@@ -1,0 +1,16 @@
+[Unit]
+Description=P8Chan Website
+After=network-online.target mariadb.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/node <path to main.js in dist/> 1234
+ExecReload=/bin/kill $MAINPID && /usr/bin/node <path to main.js in dist/> 1234
+ExecStop=/bin/kill $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
