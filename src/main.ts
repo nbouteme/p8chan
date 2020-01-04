@@ -1,6 +1,5 @@
 import koa = require('koa');
 import fs = require('fs');
-import { open, Database } from 'sqlite';
 import * as Static from 'koa-static';
 import * as send from 'koa-send';
 
@@ -46,15 +45,6 @@ export let init = async () => {
 }
 
 let fsp = fs.promises;
-
-export let initDb = async (db: Database) => {
-    let q = await db.all(`SELECT name FROM sqlite_master WHERE type='table';`);
-    if (q.length >= 3)
-        return;
-    let scr = await fsp.readFile(settings.initdb);
-    await db.exec(scr.toString());
-};
-
 
 (async () => {
     try {

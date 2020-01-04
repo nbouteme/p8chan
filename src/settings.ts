@@ -1,6 +1,4 @@
 export let settings = {
-    dbfile: '/home/lillie/p8chan.db',
-    initdb: '/home/lillie/init.sql',
     // secret pour les JWTs
     secret: '50b2c6290ea87497f6ef32390197a9b6',
     port: 1234,

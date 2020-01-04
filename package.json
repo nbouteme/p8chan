@@ -16,10 +16,6 @@
     "raw-body": "^2.4.1",
     "reflect-metadata": "^0.1.13",
     "sharp": "^0.23.4",
-    "sql-template-strings": "^2.2.2",
-    "sqlite": "^3.0.3",
-    "sqlite3": "^4.1.0",
-    "sqlite3orm": "^2.4.14",
     "svg-captcha": "^1.4.0",
     "tripcode": "^1.3.4",
     "typescript": "^3.7.2"
@@ -31,8 +27,7 @@
     "@types/koa__router": "^8.0.2",
     "@types/mongodb": "^3.3.14",
     "@types/node": "^13.1.2",
-    "@types/sharp": "^0.23.1",
-    "@types/sqlite3": "^3.1.6"
+    "@types/sharp": "^0.23.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
