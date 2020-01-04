@@ -41,7 +41,7 @@ export let init = async () => {
     p8chandb = connection.db(settings.db.database);
     Boards = p8chandb.collection('Boards');
     Admins = p8chandb.collection('Administration');
-   // Posters = p8chandb.collection('Posters');
+    // Posters = p8chandb.collection('Posters');
 }
 
 let fsp = fs.promises;
@@ -70,7 +70,7 @@ let fsp = fs.promises;
             }
             );
         //    root.use(boardapi);
-        root.listen(settings.port, () => {
+        root.listen({ port: settings.port, host: '127.0.0.1' }, () => {
             console.log('Listening...');
         })
     } catch (e) {
