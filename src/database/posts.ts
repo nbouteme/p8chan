@@ -342,12 +342,12 @@ export let createBoard = async (settings: api.BoardSetting) => {
 };
 
 export let getBoard = async (name: string) => {
-    let boards = Boards.findOne({ name }, { projection: { replies: 0 } })
+    let boards = Boards.findOne({ name }, { projection: { '_id': 0, replies: 0 } })
     return boards;
 };
 
 export let getBoards = () => {
-    let boards = Boards.find({}, { projection: { threads: 0 } })
+    let boards = Boards.find({}, { projection: { '_id': 0, threads: 0 } })
     return boards.toArray()
 }
 
@@ -400,7 +400,8 @@ export let getFile = async (name: string, date: number) => {
             }
         }, {
             '$project': {
-                'file': '$threads.replies.file'
+                'file': '$threads.replies.file',
+                '_id': 0,
             }
         }
     ]).toArray();
